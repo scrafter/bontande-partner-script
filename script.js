@@ -57,7 +57,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
   </html>
 `;
 
-(() => {
+const attachHtml = () => {
     const website = document.currentScript.getAttribute('data-website');
     const buttonText = document.currentScript.getAttribute('data-button-text');
     const seoText = document.currentScript.getAttribute('data-seo-text');
@@ -70,4 +70,13 @@ const getButtonHtml = (link, buttonText, seoText) => `
         const bontandeWrapper = document.querySelector(".bontande-wrapper");
         bontandeWrapper.remove();
     });
+};
+
+(() => {
+    const intervalId = setInterval(() => {
+        if (document.body) {
+            attachHtml();
+            clearInterval(intervalId);
+        }
+    }, 1000);
 })();

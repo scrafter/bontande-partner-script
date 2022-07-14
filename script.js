@@ -45,7 +45,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
         
       <div class="bontande-wrapper">
         <button id="bontande-close-button">x</button>
-        <a id="bontande-button" href="${link}">
+        <a id="bontande-button" href="${link}" target="_blank">
           ${buttonText}
         </a>
       </div>

@@ -81,3 +81,4 @@ const attachHtml = () => {
         }
     }, 1000);
 })();
+console.log('current-script', document.currentScript);

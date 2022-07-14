@@ -16,6 +16,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
           padding: 8px 12px;
           text-decoration: none;
           transition: all 0.3s ease-out;
+          font-size: 18px;
         }
   
         #bontande-button:hover {
@@ -23,6 +24,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
         }
   
         #bontande-close-button {
+          font-size: 16px;
           position: fixed;
           right: 10px;
           bottom: 50px;
@@ -30,6 +32,8 @@ const getButtonHtml = (link, buttonText, seoText) => `
           border: 0;
           color: #e85f1a;
           cursor: pointer;
+          -webkit-box-shadow: 0 0 15px 5px #FFFFFF; 
+          box-shadow: 0 0 15px 5px #FFFFFF;
         }
         
         #bontande-promo {
@@ -60,7 +64,6 @@ const getButtonHtml = (link, buttonText, seoText) => `
     const element = document.createElement('div');
     element.innerHTML = getButtonHtml(website, buttonText, seoText);
     document.body.appendChild(element);
-    console.log('asdasda', element);
 
     const closeButton = document.querySelector("#bontande-close-button");
     closeButton.addEventListener("click", () => {

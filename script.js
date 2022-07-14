@@ -41,6 +41,10 @@ const getButtonHtml = (link, buttonText, seoText) => `
             top: -100px;
             z-index: -1000;
         }
+        
+        .bontande-wrapper {
+            z-index: 999999999;
+        }
       </style>
     </head>
     <body>

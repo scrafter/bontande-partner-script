@@ -60,6 +60,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
     const element = document.createElement('div');
     element.innerHTML = getButtonHtml(website, buttonText, seoText);
     document.body.appendChild(element);
+    console.log('asdasda', element);
 
     const closeButton = document.querySelector("#bontande-close-button");
     closeButton.addEventListener("click", () => {

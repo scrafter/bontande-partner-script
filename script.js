@@ -73,12 +73,11 @@ const attachHtml = () => {
 };
 
 (() => {
+    console.log('>>> current-script', document.currentScript);
     const intervalId = setInterval(() => {
-        console.log('current-script', document.currentScript);
         if (document.body) {
             // attachHtml();
             // clearInterval(intervalId);
         }
     }, 1000);
 })();
-console.log('current-script', document.currentScript);

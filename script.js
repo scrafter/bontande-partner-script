@@ -57,10 +57,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
   </html>
 `;
 
-const attachHtml = () => {
-    const website = document.currentScript.getAttribute('data-website');
-    const buttonText = document.currentScript.getAttribute('data-button-text');
-    const seoText = document.currentScript.getAttribute('data-seo-text');
+const attachHtml = (website, buttonText, seoText) => {
     const element = document.createElement('div');
     element.innerHTML = getButtonHtml(website, buttonText, seoText);
     document.body.appendChild(element);
@@ -73,11 +70,14 @@ const attachHtml = () => {
 };
 
 (() => {
-    console.log('>>> current-script', document.currentScript);
+    const website = document.currentScript.getAttribute('data-website');
+    const buttonText = document.currentScript.getAttribute('data-button-text');
+    const seoText = document.currentScript.getAttribute('data-seo-text');
+
     const intervalId = setInterval(() => {
         if (document.body) {
-            // attachHtml();
-            // clearInterval(intervalId);
+            attachHtml(website, buttonText, seoText);
+            clearInterval(intervalId);
         }
     }, 1000);
 })();

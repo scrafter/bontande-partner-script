@@ -14,7 +14,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
           color: white;
           font-family: "Lato", sans-serif;
           padding: 10px 15px;
-          padding-left: 25px;
+          padding-left: 30px;
           text-decoration: none;
           transition: all 0.3s ease-out;
           font-size: 18px;
@@ -30,7 +30,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
           font-size: 16px;
           position: fixed;
           right: 10px;
-          bottom: 83px;
+          bottom: 105px;
           background-color: white;
           border-radius: 50%;
           border: 0;
@@ -51,11 +51,19 @@ const getButtonHtml = (link, buttonText, seoText) => `
             z-index: 999999999;
         }
         
+        .content {
+          width: 160px;
+          overflow-wrap: break-word;
+          margin: 0;
+        }
+        
         .logo {
           position: fixed;
-          bottom: 50px;
-          right: 130px;
+          bottom: 55px;
+          right: 185px;
           z-index: 9999999999;
+          height: 54px;
+          width: 40px;
         }
       </style>
     </head>
@@ -63,10 +71,12 @@ const getButtonHtml = (link, buttonText, seoText) => `
       <div id="bontande-promo">${seoText}</div>
         
       <div class="bontande-wrapper">
-        <img src="./logo.svg" class="logo" />
+        <img src="https://bontande-production.s3.eu-central-1.amazonaws.com/logo.svg" class="logo" />
         <button id="bontande-close-button">x</button>
         <a id="bontande-button" href="${link}" target="_blank">
-          ${buttonText}
+          <p class="content">
+            Kup naszą kartę podarunkową
+          </p>
         </a>
       </div>
     </body>

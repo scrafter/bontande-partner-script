@@ -7,16 +7,19 @@ const getButtonHtml = (link, buttonText, seoText) => `
   
         #bontande-button {
           position: fixed;
-          right: 10px;
-          bottom: 10px;
+          right: 0;
+          bottom: 50px;
           border: 0;
           background-color: #e85f1a;
           color: white;
           font-family: "Lato", sans-serif;
-          padding: 8px 12px;
+          padding: 10px 15px;
+          padding-left: 25px;
           text-decoration: none;
           transition: all 0.3s ease-out;
           font-size: 18px;
+          z-index: 999999999;
+          border-radius: 10px 0 0 10px
         }
   
         #bontande-button:hover {
@@ -27,12 +30,14 @@ const getButtonHtml = (link, buttonText, seoText) => `
           font-size: 16px;
           position: fixed;
           right: 10px;
-          bottom: 50px;
-          background-color: transparent;
+          bottom: 83px;
+          background-color: white;
+          border-radius: 50%;
           border: 0;
           color: #e85f1a;
           cursor: pointer;
           text-shadow: 0 0 5px #FFFFFF;
+          z-index: 9999999999;
         }
         
         #bontande-promo {
@@ -45,12 +50,20 @@ const getButtonHtml = (link, buttonText, seoText) => `
         .bontande-wrapper {
             z-index: 999999999;
         }
+        
+        .logo {
+          position: fixed;
+          bottom: 50px;
+          right: 130px;
+          z-index: 9999999999;
+        }
       </style>
     </head>
     <body>
       <div id="bontande-promo">${seoText}</div>
         
       <div class="bontande-wrapper">
+        <img src="./logo.svg" class="logo" />
         <button id="bontande-close-button">x</button>
         <a id="bontande-button" href="${link}" target="_blank">
           ${buttonText}

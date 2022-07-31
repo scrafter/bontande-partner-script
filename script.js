@@ -19,7 +19,8 @@ const getButtonHtml = (link, buttonText, seoText) => `
           transition: all 0.3s ease-out;
           font-size: 18px;
           z-index: 999999999;
-          border-radius: 10px 0 0 10px
+          border-radius: 10px 0 0 10px;
+          box-shadow: 0 0 10px 0 rgba(146, 62, 18, 1);
         }
   
         #bontande-button:hover {

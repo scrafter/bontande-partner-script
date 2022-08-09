@@ -4,6 +4,11 @@ const getButtonHtml = (link, buttonText, seoText) => `
       <meta charset="utf-8">
       <style>
         @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+        
+        * {
+            font-family: "Lato", sans-serif !important;
+            line-height: 1rem !important;
+        }
   
         #bontande-button {
           position: fixed;

@@ -13,7 +13,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
         #bontande-button {
           position: fixed;
           right: 0;
-          bottom: ${marginBottom + 50}px;
+          bottom: ${Number(marginBottom) + 50}px;
           border: 0;
           background-color: #e85f1a;
           color: white;
@@ -36,7 +36,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
           font-size: 16px;
           position: fixed;
           right: 10px;
-          bottom: ${marginBottom + 96}px;
+          bottom: ${Number(marginBottom) + 96}px;
           background-color: white;
           border-radius: 50%;
           border: 0;
@@ -65,7 +65,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
         
         .logo {
           position: fixed;
-          bottom: ${marginBottom + 55}px;
+          bottom: ${Number(marginBottom) + 55}px;
           right: 185px;
           z-index: 9999999999;
           height: 54px;

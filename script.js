@@ -1,4 +1,4 @@
-const getButtonHtml = (link, buttonText, seoText) => `
+const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
   <html>
     <head>
       <meta charset="utf-8">
@@ -13,7 +13,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
         #bontande-button {
           position: fixed;
           right: 0;
-          bottom: 50px;
+          bottom: ${marginBottom + 50}px;
           border: 0;
           background-color: #e85f1a;
           color: white;
@@ -36,7 +36,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
           font-size: 16px;
           position: fixed;
           right: 10px;
-          bottom: 96px;
+          bottom: ${marginBottom + 96}px;
           background-color: white;
           border-radius: 50%;
           border: 0;
@@ -65,7 +65,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
         
         .logo {
           position: fixed;
-          bottom: 55px;
+          bottom: ${marginBottom + 55}px;
           right: 185px;
           z-index: 9999999999;
           height: 54px;
@@ -91,9 +91,9 @@ const getButtonHtml = (link, buttonText, seoText) => `
   </html>
 `;
 
-const attachHtml = (website, buttonText, seoText) => {
+const attachHtml = (website, buttonText, seoText, marginBottom) => {
     const element = document.createElement('div');
-    element.innerHTML = getButtonHtml(website, buttonText, seoText);
+    element.innerHTML = getButtonHtml(website, buttonText, seoText, marginBottom);
     document.body.appendChild(element);
 
     const closeButton = document.querySelector("#bontande-close-button");
@@ -107,10 +107,11 @@ const attachHtml = (website, buttonText, seoText) => {
     const website = document.currentScript.getAttribute('data-website');
     const buttonText = document.currentScript.getAttribute('data-button-text');
     const seoText = document.currentScript.getAttribute('data-seo-text');
+    const marginBottom = document.currentScript.getAttribute('data-padding');
 
     const intervalId = setInterval(() => {
         if (document.body) {
-            attachHtml(website, buttonText, seoText);
+            attachHtml(website, buttonText, seoText, marginBottom);
             clearInterval(intervalId);
         }
     }, 1000);

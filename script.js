@@ -5,7 +5,7 @@ const getButtonHtml = (link, buttonText, seoText) => `
       <style>
         @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
         
-        * {
+        .bontande-script * {
             font-family: "Lato", sans-serif !important;
             line-height: 1rem !important;
         }
@@ -74,17 +74,19 @@ const getButtonHtml = (link, buttonText, seoText) => `
       </style>
     </head>
     <body>
-      <div id="bontande-promo">${seoText}</div>
+      <span class="bontande-script">
+          <div id="bontande-promo">${seoText}</div>
         
-      <div class="bontande-wrapper">
-        <img src="https://bontande-production.s3.eu-central-1.amazonaws.com/logo.svg" class="logo" />
-        <button id="bontande-close-button">x</button>
-        <a id="bontande-button" href="${link}" target="_blank">
-          <p class="content">
-            Kup naszą kartę podarunkową
-          </p>
-        </a>
-      </div>
+          <div class="bontande-wrapper">
+            <img src="https://bontande-production.s3.eu-central-1.amazonaws.com/logo.svg" class="logo" />
+            <button id="bontande-close-button">x</button>
+            <a id="bontande-button" href="${link}" target="_blank">
+              <p class="content">
+                Kup naszą kartę podarunkową
+              </p>
+            </a>
+          </div>
+      </span>
     </body>
   </html>
 `;

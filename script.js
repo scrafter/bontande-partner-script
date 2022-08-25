@@ -46,6 +46,8 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
           z-index: 9999999999;
           padding: 0 6px 3px 6px;
           margin: 0;
+          font-weight: 400;
+          text-transform: lowercase;
         }
         
         .bontande-script #bontande-promo {

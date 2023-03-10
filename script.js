@@ -38,7 +38,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
           position: fixed;
           right: 10px;
           bottom: ${Number(marginBottom) + 96}px;
-          background-color: white;
+          background-color: white !important;
           border-radius: 50%;
           border: 0;
           color: #e85f1a;
@@ -49,7 +49,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
           margin: 0;
           font-weight: 400;
           text-transform: lowercase;
-          background: white;
+          background: white !important;
         }
         
         .bontande-script #bontande-promo {

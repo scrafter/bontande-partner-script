@@ -114,9 +114,12 @@ const attachHtml = (website, buttonText, seoText, marginBottom) => {
     const buttonText = document.currentScript.getAttribute('data-button-text');
     const seoText = document.currentScript.getAttribute('data-seo-text');
     const marginBottom = document.currentScript.getAttribute('data-padding');
+    const onlyAfterRedirect = document.currentScript.getAttribute('data-display-after-redirect');
+    const fromBontande = new URLSearchParams(window.location.search).get('from-bontande');
+    const displayButton = onlyAfterRedirect ? !!fromBontande : true;
 
     const intervalId = setInterval(() => {
-        if (document.body) {
+        if (document.body && displayButton) {
             attachHtml(website, buttonText, seoText, marginBottom);
             clearInterval(intervalId);
         }

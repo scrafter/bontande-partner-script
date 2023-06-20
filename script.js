@@ -7,7 +7,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
         
         .bontande-script * {
             font-family: "Lato", sans-serif !important;
-            line-height: 1rem !important;
+            line-height: 1 !important;
             padding: 0;
         }
   

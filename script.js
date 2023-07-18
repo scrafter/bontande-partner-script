@@ -1,4 +1,4 @@
-const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
+const getButtonHtml = (link, buttonText, seoText, marginBottom = 0, displayOnLeft = false) => `
   <html>
     <head>
       <meta charset="utf-8">
@@ -13,7 +13,8 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
   
         .bontande-script #bontande-button {
           position: fixed;
-          right: 0;
+          left: ${displayOnLeft ? 0 : 'auto'};
+          right: ${displayOnLeft ? 'auto' : 0};
           bottom: ${Number(marginBottom) + 50}px;
           border: 0;
           background-color: #e85f1a;
@@ -24,7 +25,7 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
           transition: all 0.3s ease-out;
           font-size: 18px;
           z-index: 999999999;
-          border-radius: 10px 0 0 10px;
+          border-radius: ${displayOnLeft ? '0 10px 10px 0' : '10px 0 0 10px'};
           box-shadow: 0 0 10px 0 rgba(146, 62, 18, 1);
           line-height: 1.1rem;
         }
@@ -36,8 +37,9 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
         .bontande-script #bontande-close-button {
           font-size: 16px;
           position: fixed;
-          right: 10px;
-          bottom: ${Number(marginBottom) + 96}px;
+          left: ${displayOnLeft ? '5px' : 'auto'};
+          right: ${displayOnLeft ? 'auto' : '10px'};
+          bottom: ${Number(marginBottom) + 100}px;
           background-color: white !important;
           border-radius: 50%;
           border: 0;
@@ -72,7 +74,8 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
         .bontande-script .bontande-logo {
           position: fixed;
           bottom: ${Number(marginBottom) + 55}px;
-          right: 170px;
+          left: ${displayOnLeft ? '160px' : 'auto'};
+          right: ${displayOnLeft ? 'auto' : '170px'};
           z-index: 9999999999;
           height: 54px;
           width: 40px;
@@ -97,9 +100,9 @@ const getButtonHtml = (link, buttonText, seoText, marginBottom = 0) => `
   </html>
 `;
 
-const attachHtml = (website, buttonText, seoText, marginBottom) => {
+const attachHtml = (website, buttonText, seoText, marginBottom, displayOnLeft) => {
     const element = document.createElement('div');
-    element.innerHTML = getButtonHtml(website, buttonText, seoText, marginBottom);
+    element.innerHTML = getButtonHtml(website, buttonText, seoText, marginBottom, displayOnLeft);
     document.body.appendChild(element);
 
     const closeButton = document.querySelector("#bontande-close-button");
@@ -117,10 +120,11 @@ const attachHtml = (website, buttonText, seoText, marginBottom) => {
     const onlyAfterRedirect = document.currentScript.getAttribute('data-display-after-redirect');
     const fromBontande = new URLSearchParams(window.location.search).get('from-bontande');
     const displayButton = onlyAfterRedirect ? !!fromBontande : true;
+    const displayOnLeft = document.currentScript.getAttribute('data-on-left');
 
     const intervalId = setInterval(() => {
         if (document.body && displayButton) {
-            attachHtml(website, buttonText, seoText, marginBottom);
+            attachHtml(website, buttonText, seoText, marginBottom, displayOnLeft);
             clearInterval(intervalId);
         }
     }, 1000);
